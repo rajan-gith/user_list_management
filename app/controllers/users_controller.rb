@@ -12,6 +12,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  def excel
+    @users = User.all
+    render axlsx: 'excel'
+  end
+
   # GET /users/new
   def new
     @user = User.new
