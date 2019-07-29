@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def excel
     @users = User.all
-    render axlsx: 'excel'
+    ExcelWorker.perform_async
   end
 
   # GET /users/new
